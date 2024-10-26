@@ -9,7 +9,7 @@ public class ArrayListDemo {
 
         //This is a generic declaration, meaning, any type of data can be added/removed.
         //be it integers, strings, booleans etc
-        ArrayList list = new ArrayList();
+        ArrayList<Object> list = new ArrayList<Object>(15);
 
         //adding elements
         list.add(1);
@@ -19,7 +19,17 @@ public class ArrayListDemo {
 
 
         //prints as an array
-        System.out.println(list);
+        System.out.println("Printing the list as an array: "+list);
+
+        //get an element
+        System.out.println("Fetching an element at an index: "+list.get(3));
+
+        //get size
+
+        System.out.println("Printing the size of the list: "+list.size());
+
+        //Virtual Capacity Concept
+
     }
 
 
