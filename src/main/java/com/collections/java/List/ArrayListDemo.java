@@ -17,6 +17,7 @@ public class ArrayListDemo {
         list.add(true);
         list.add('c');
 
+
         //prints as an array
         System.out.println(list);
     }
