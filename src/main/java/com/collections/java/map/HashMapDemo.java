@@ -1,6 +1,7 @@
 package com.collections.java.map;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class HashMapDemo {
@@ -24,8 +25,58 @@ public class HashMapDemo {
         System.out.println(capitals.get(null));
 
         //Hashmap is not synchronized and hence not thread safe
-        
 
+        //Iteration/Traversing over a map
+
+        //Using Iterator - over the keys
+        Iterator<String> it = capitals.keySet().iterator();
+        while (it.hasNext()) {
+            String keys = it.next();
+            String values = capitals.get(keys);
+            System.out.println("Key -> " + keys + " & Value -> " + values);
+        }
+
+        //Using EntrySet
+        Iterator<Map.Entry<String, String>> iterator = capitals.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, String> entry = iterator.next();
+            System.out.println("Key is -> " + entry.getKey() + " and the Value is -> " + entry.getValue());
+        }
+
+        //Using Java 8 - Streams
+        capitals.forEach((k, v) -> System.out.println("Key = " + k + " and Value = " + v));
+
+        //remove() - to remove the elements using keys
+        capitals.remove(null);
+        System.out.println(capitals);
+
+
+        //Comparing two or more hashmaps
+
+        Map<Integer, String> map1 = new HashMap<>();
+        map1.put(1,"A");
+        map1.put(2,"B");
+        map1.put(3,"C");
+        map1.put(4,"D");
+
+        Map<Integer, String> map2 = new HashMap<>();
+        map2.put(1,"A");
+        map2.put(2,"B");
+        map2.put(3,"C");
+        map2.put(4,"D");
+
+        Map<Integer, String> map3 = new HashMap<>();
+        map3.put(1,"X");
+        map3.put(2,"Y");
+        map3.put(3,"Z");
+
+        //using equals()
+
+        System.out.println(map1.equals(map2)); // --> gives true
+
+        System.out.println(map1.equals(map3)); // --> gives false
+
+        
 
     }
 }
