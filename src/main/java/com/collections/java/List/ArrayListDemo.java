@@ -1,8 +1,7 @@
 package com.collections.java.List;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArrayListDemo {
 
@@ -141,8 +140,23 @@ public class ArrayListDemo {
         //toArray() - returns an Object[]
         Object[] array1 = numsList.toArray();
         System.out.println(Arrays.toString(array1));
-        for(Object ob: array1){
+        for (Object ob : array1) {
             System.out.println(ob);
         }
+
+        //Removing Duplicates from the list
+
+        //Using LinkedHashSet
+        LinkedHashSet<Integer> deleteDups = new LinkedHashSet<>(numsList);
+        ArrayList<Integer> newDupsList = new ArrayList<>(deleteDups);
+        System.out.println("List without duplicate numbers: "+newDupsList);
+
+        //Using Streams API
+        List<Integer> noDups = numsList.stream().distinct().collect(Collectors.toList());
+        System.out.println("List without duplicate numbers: "+noDups);
+        for (int nos : noDups) {
+            System.out.print(nos + " - ");
+        }
+
     }
 }
