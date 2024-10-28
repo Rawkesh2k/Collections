@@ -1,4 +1,4 @@
-package com.collections.java.List;
+package com.collections.java.list;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -149,14 +149,29 @@ public class ArrayListDemo {
         //Using LinkedHashSet
         LinkedHashSet<Integer> deleteDups = new LinkedHashSet<>(numsList);
         ArrayList<Integer> newDupsList = new ArrayList<>(deleteDups);
-        System.out.println("List without duplicate numbers: "+newDupsList);
+        System.out.println("List without duplicate numbers: " + newDupsList);
 
         //Using Streams API
         List<Integer> noDups = numsList.stream().distinct().collect(Collectors.toList());
-        System.out.println("List without duplicate numbers: "+noDups);
+        System.out.println("List without duplicate numbers: " + noDups);
         for (int nos : noDups) {
             System.out.print(nos + " - ");
         }
+        System.out.println();
+        //Compare two array lists
+        ArrayList<String> l1 = new ArrayList<>(Arrays.asList("A", "B", "C", "D", "F"));
+        ArrayList<String> l2 = new ArrayList<>(Arrays.asList("A", "B", "C", "D", "E"));
+        Collections.sort(l1);
+        Collections.sort(l2);
 
+        System.out.println(l1.equals(l2));
+
+        //find the common elements
+        //  l1.retainAll(l2);
+        //System.out.println(l1);
+
+        //find the missing elements
+        l1.removeAll(l2);
+        System.out.println(l1);
     }
 }
