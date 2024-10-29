@@ -1,8 +1,6 @@
 package com.collections.java.map;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class HashMapDemo {
     public static void main(String[] args) {
@@ -54,29 +52,74 @@ public class HashMapDemo {
         //Comparing two or more hashmaps
 
         Map<Integer, String> map1 = new HashMap<>();
-        map1.put(1,"A");
-        map1.put(2,"B");
-        map1.put(3,"C");
-        map1.put(4,"D");
+        map1.put(1, "A");
+        map1.put(2, "B");
+        map1.put(3, "C");
+        map1.put(4, "D");
 
         Map<Integer, String> map2 = new HashMap<>();
-        map2.put(1,"A");
-        map2.put(2,"B");
-        map2.put(3,"C");
-        map2.put(4,"D");
+        map2.put(1, "A");
+        map2.put(2, "B");
+        map2.put(3, "C");
+        map2.put(4, "D");
+
 
         Map<Integer, String> map3 = new HashMap<>();
-        map3.put(1,"X");
-        map3.put(2,"Y");
-        map3.put(3,"Z");
+        map3.put(1, "X");
+        map3.put(2, "Y");
+        map3.put(3, "Z");
 
-        //using equals()
+        //using equals() - on the basis of key-value pairs
 
         System.out.println(map1.equals(map2)); // --> gives true
 
         System.out.println(map1.equals(map3)); // --> gives false
 
-        
+        //compare hashmaps for the same keys using keySet()
 
+        System.out.println(map1.keySet().equals(map2.keySet()));
+
+        //combine/union keys using HashSet & finding the extra keys
+        map2.put(5, "E");
+        HashSet<Integer> keysCombined = new HashSet<>(map1.keySet());
+        keysCombined.addAll(map2.keySet());
+        keysCombined.removeAll(map1.keySet());
+        System.out.println(keysCombined);
+
+        //comparing maps using values
+
+        Map<Integer, String> map4 = new HashMap<>();
+        map4.put(1, "A");
+        map4.put(2, "B");
+        map4.put(3, "C");
+        map4.put(4, "D");
+
+        Map<Integer, String> map5 = new HashMap<>();
+        map5.put(1, "A");
+        map5.put(2, "B");
+        map5.put(3, "C");
+        map5.put(4, "D");
+
+
+        Map<Integer, String> map6 = new HashMap<>();
+        map6.put(1, "X");
+        map6.put(2, "Y");
+        map6.put(3, "Z");
+        map6.put(4, "A");
+
+        //System.out.println(map4.equals(map5));
+        System.out.println("Comparing maps values -->" + map4.values().equals(map5.values()));
+
+        //if we want the duplicates to be allowed - can go with ArrayList
+
+        System.out.println("Comparison with Array List: " + new ArrayList<>(map4.values())
+                .equals(new ArrayList<>(map5.values())));
+
+        //if we want the duplicates not to be allowed - can go with HashSet
+
+        System.out.println("Comparison with Hash Set: " + new HashSet<>(map4.values())
+                .equals(new HashSet<>(map6.values())));
+
+        
     }
 }
