@@ -120,6 +120,6 @@ public class HashMapDemo {
         System.out.println("Comparison with Hash Set: " + new HashSet<>(map4.values())
                 .equals(new HashSet<>(map6.values())));
 
-        
+
     }
 }
