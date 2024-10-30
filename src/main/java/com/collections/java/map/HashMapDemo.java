@@ -14,7 +14,6 @@ public class HashMapDemo {
 
     public static void main(String[] args) {
 
-        System.out.println( "Map Using static call: "+ HashMapDemo.marks.get("B"));
 
         //Different ways to create a map
 
@@ -23,6 +22,17 @@ public class HashMapDemo {
         HashMap<String, String> createMap2 = new HashMap<>();
 
         //static way: static Hashmap
+        System.out.println("Map Using static call: " + HashMapDemo.marks.get("B"));
+
+        //immutable map with single entry
+        Map<String, String> clubSpain = Collections.singletonMap("Spain", "Real Madrid");
+        System.out.println("One of the top football clubs in spain is: " + clubSpain.get("Spain"));
+        //clubSpain.put("Ibiza","Spain");
+        // --> gives Exception in thread "main" java.lang.UnsupportedOperationException if we try to modify
+
+
+        //Java 8
+
 
         Map<String, String> capitals = new HashMap<>();
         capitals.put("India", "New Delhi");
