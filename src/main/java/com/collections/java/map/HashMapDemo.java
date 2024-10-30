@@ -31,7 +31,9 @@ public class HashMapDemo {
         // --> gives Exception in thread "main" java.lang.UnsupportedOperationException if we try to modify
 
 
-        //Java 8
+        //creating an empty map
+
+        Map<Integer, String> emptyMap = Map.of();
 
 
         Map<String, String> capitals = new HashMap<>();
