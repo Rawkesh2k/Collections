@@ -3,7 +3,27 @@ package com.collections.java.map;
 import java.util.*;
 
 public class HashMapDemo {
+
+    public static Map<String, Integer> marks = new HashMap<>();
+
+    static {
+        marks.put("A", 100);
+        marks.put("B", 97);
+        marks.put("C", 87);
+    }
+
     public static void main(String[] args) {
+
+        System.out.println( "Map Using static call: "+ HashMapDemo.marks.get("B"));
+
+        //Different ways to create a map
+
+        //Using hashMap class or parent interface Map
+        Map<String, String> createMap = new HashMap<>();
+        HashMap<String, String> createMap2 = new HashMap<>();
+
+        //static way: static Hashmap
+
         Map<String, String> capitals = new HashMap<>();
         capitals.put("India", "New Delhi");
         capitals.put("New Zealand", "Auckland");
