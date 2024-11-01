@@ -1,5 +1,7 @@
 package com.collections.java.map;
 
+import com.google.common.collect.ImmutableMap;
+
 import java.util.*;
 
 public class HashMapDemo {
@@ -34,7 +36,34 @@ public class HashMapDemo {
         //creating an empty map
 
         Map<Integer, String> emptyMap = Map.of();
+        //emptyMap.put(1, "Namibia");
+        //System.out.println(emptyMap.get(1));
+        //Throws Exception in thread "main" java.lang.UnsupportedOperationException as this is an empty map
 
+        //Using Map.ofEntries
+
+        Map<String, Integer> mulitpleEntryMAp = Map.ofEntries(
+                new AbstractMap.SimpleEntry<>("A", 100),
+                new AbstractMap.SimpleEntry<>("B", 96),
+                new AbstractMap.SimpleEntry<>("C", 99),
+                new AbstractMap.SimpleEntry<>("D", 93)
+        );
+
+        Iterator<Map.Entry<String, Integer>> it = mulitpleEntryMAp.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, Integer> next = it.next();
+            System.out.println("Key is --> " + next.getKey() + " and Value is --> " + next.getValue());
+        }
+        //Maps Using Guava API
+
+        Map<String, Integer> guavaMap = ImmutableMap.of("Google", 1, "Amazon", 2, "Flipkart", 3);
+        Iterator<Map.Entry<String, Integer>> guavaIT = guavaMap.entrySet().iterator();
+        while (guavaIT.hasNext()) {
+            Map.Entry<String, Integer> next = guavaIT.next();
+            System.out.println("Key = " + next.getKey() + "Value = " + next.getValue());
+        }
+
+        //***************************************************************************//
 
         Map<String, String> capitals = new HashMap<>();
         capitals.put("India", "New Delhi");
@@ -59,9 +88,9 @@ public class HashMapDemo {
         //Iteration/Traversing over a map
 
         //Using Iterator - over the keys
-        Iterator<String> it = capitals.keySet().iterator();
-        while (it.hasNext()) {
-            String keys = it.next();
+        Iterator<String> itr = capitals.keySet().iterator();
+        while (itr.hasNext()) {
+            String keys = itr.next();
             String values = capitals.get(keys);
             System.out.println("Key -> " + keys + " & Value -> " + values);
         }
