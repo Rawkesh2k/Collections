@@ -54,8 +54,5 @@ public class SynchronizedMapsDemo {
        //Throwing runtime exception
         System.out.println(1 / 0);
 
-
-
-
     }
 }
