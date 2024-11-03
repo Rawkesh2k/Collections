@@ -1,7 +1,6 @@
 package com.collections.java.map;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class LinkedHashMapImpl {
     public static void main(String[] args) {
@@ -13,6 +12,13 @@ public class LinkedHashMapImpl {
         map.put(12, "Brady");
         map.put(null, "Verstappen");
         System.out.println(map);
+
+        ArrayList<Integer> list = new ArrayList<>(map.keySet());
+        list.removeIf(Objects::isNull); // Remove nulls from the list
+        Collections.sort(list); // Sort in natural order (ascending)
+        System.out.println("After sorting: " + list);
+
+
 
 
     }
