@@ -102,13 +102,14 @@ public class LinkedListImpl {
         characters.add("O");
         characters.add("P");
 
+        //sorting - using descendingIterator
         Iterator<String> reversedList = characters.descendingIterator();
         while (reversedList.hasNext())
         {
             System.out.println(reversedList.next());
         }
 
-        //using collections
+        //sorting - using collections
         Collections.sort(characters);
         System.out.println(characters);
     }
