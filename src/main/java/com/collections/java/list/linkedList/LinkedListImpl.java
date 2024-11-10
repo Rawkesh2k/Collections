@@ -1,7 +1,9 @@
 package com.collections.java.list.linkedList;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Spliterator;
 
 public class LinkedListImpl {
     public static void main(String[] args) {
@@ -50,7 +52,7 @@ public class LinkedListImpl {
             System.out.println(name);
         }
 
-        names.add(3,"Steve");
+        names.add(3, "Steve");
 
         //using iterator
         System.out.println("************    with iterator   *************");
@@ -77,5 +79,37 @@ public class LinkedListImpl {
         names.addLast("Script");
 
         System.out.println(names);
+
+        //remove elements
+        names.remove(3);
+        System.out.println(names);
+
+        //removeAll(), removeFirst(), removeLast() serves the purpose as in their names
+
+        names.removeAll(places);
+        System.out.println(names);
+
+
+        //clear()
+        names.clear();
+        System.out.println(names);
+
+        //reverse the list using Iterator
+        LinkedList<String> characters = new LinkedList<>();
+        characters.add("H");
+        characters.add("Y");
+        characters.add("E");
+        characters.add("O");
+        characters.add("P");
+
+        Iterator<String> reversedList = characters.descendingIterator();
+        while (reversedList.hasNext())
+        {
+            System.out.println(reversedList.next());
+        }
+
+        //using collections
+        Collections.sort(characters);
+        System.out.println(characters);
     }
 }
