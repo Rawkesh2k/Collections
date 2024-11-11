@@ -1,6 +1,7 @@
 package com.collections.java.set;
 
 import java.util.EnumSet;
+import java.util.Iterator;
 
 public class EnumSetImpl {
 
@@ -47,5 +48,26 @@ public class EnumSetImpl {
         //adding all elements from lang1 to lang2
         lang2.addAll(lang1);
         System.out.println(lang2);
+
+        //iteration
+        EnumSet<Lang> fullLang = EnumSet.allOf(Lang.class);
+        Iterator<Lang> iterator = fullLang.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        //remove(), removeAll()
+        System.out.println("Enum Set before removal -> " + fullLang);
+        fullLang.remove(Lang.CSharp);
+        System.out.println("Enum Set after removal -> " + fullLang);
+        System.out.println("--------------------------------------");
+        System.out.println("Enum Set before removal of all items ->" + fullLang);
+
+        fullLang.removeAll(fullLang);
+        System.out.println("Enum Set after removal of all items -> " + fullLang);
+
+        //can use clear() method to clear/remove as well
+        fullLang.clear();
+        System.out.println(fullLang);
     }
 }

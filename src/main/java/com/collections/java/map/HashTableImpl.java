@@ -4,6 +4,12 @@ import java.util.Hashtable;
 
 public class HashTableImpl {
     public static void main(String[] args) {
+
+        //Legacy Map and Collection
+        //synchronized - hence thread safe
+        //Initial capacity is 11, Load Factor is 0.75
+
+
         Hashtable<Integer, String> map = new Hashtable<>();
         map.put(14, "N");
         map.put(11, "K");
