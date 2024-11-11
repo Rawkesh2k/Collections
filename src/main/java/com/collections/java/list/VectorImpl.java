@@ -1,6 +1,7 @@
 package com.collections.java.list;
 
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -45,6 +46,25 @@ public class VectorImpl {
         Iterator<Integer> it = list.iterator();
         while (it.hasNext()) {
             System.out.println(it.next());
+        }
+
+        //Using enumerator
+        Vector<String> fruits = new Vector<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+
+        Enumeration<String> enumeration = fruits.elements();
+        while (enumeration.hasMoreElements()) {
+            System.out.println(enumeration.nextElement());
+        }
+
+        //for the list above
+        Enumeration<Integer> en = list.elements();
+        while(en.hasMoreElements())
+        {
+            System.out.println(" || ");
+            System.out.println(en.nextElement());
         }
 
         //sorting
