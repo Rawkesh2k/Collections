@@ -1,7 +1,10 @@
 package com.collections.java.stack;
 
+import java.util.Stack;
+
 public class StackImpl {
 
+    //Time complexity -> O(1)
     //our own implementation of stack
 
     int size;
@@ -27,6 +30,7 @@ public class StackImpl {
     //peek() - to check the top element - no altering just checking
     public int peek() {
         if (!this.isEmpty()) {
+            System.out.println("The top element is - > " + arr[top]);
             return arr[top];
         } else {
             System.out.println("Stack is empty");
@@ -59,6 +63,30 @@ public class StackImpl {
     }
 
     public static void main(String[] args) {
+        StackImpl stack = new StackImpl(5);
+        //pushing/adding elements to the stack
+        stack.push(34);
+        stack.push(56);
+        stack.push(76);
+        stack.push(57);
+        stack.push(-91);
 
+        stack.peek();
+
+        stack.pop();
+
+        //Util class stack implementation
+        Stack<Integer> s = new Stack<>();
+        s.push(2);
+        s.push(35);
+        s.push(5224);
+        s.push(0);
+        //s.push(null); // null values are not allowed-> throws NullPointerException
+
+
+        //iteration using for each loop
+        for (int s1 : s) {
+            System.out.println(s1);
+        }
     }
 }
