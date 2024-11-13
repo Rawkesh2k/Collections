@@ -5,6 +5,7 @@ import java.util.Stack;
 public class StackImpl {
 
     //Time complexity -> O(1)
+    //Follows LIFO - Last In, First Out
     //our own implementation of stack
 
     int size;
@@ -33,7 +34,7 @@ public class StackImpl {
             System.out.println("The top element is - > " + arr[top]);
             return arr[top];
         } else {
-            System.out.println("Stack is empty");
+            System.out.println("Nothing to Peek, Stack is empty");
             return -1;
         }
     }
@@ -57,20 +58,24 @@ public class StackImpl {
             System.out.println("The popped element is -> " + arr[returnTop]);
             return arr[returnTop];
         } else {
-            System.out.println("The stack is empty");
+            System.out.println("Nothing to Pop, The stack is empty");
             return -1;
         }
     }
 
     public static void main(String[] args) {
         StackImpl stack = new StackImpl(5);
+        //empty stack
+        stack.peek();
+        stack.pop();
         //pushing/adding elements to the stack
         stack.push(34);
         stack.push(56);
         stack.push(76);
         stack.push(57);
         stack.push(-91);
-
+        //additional element as size is mentioned as 5
+        stack.push(57);
         stack.peek();
 
         stack.pop();
