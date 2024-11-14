@@ -64,7 +64,17 @@ public class QueueImplUsingArray {
     }
 
     public static void main(String[] args) {
-
-
+        QueueImplUsingArray que = new QueueImplUsingArray(10);
+        que.enqueue(10);//--> adds 10
+        que.enqueue(20);//--> adds 20
+        que.dequeue(); //--> removes 10
+        que.enqueue(20);
+        que.enqueue(130);
+        que.enqueue(560);
+        que.enqueue(100);
+        que.enqueue(0);
+        que.enqueue(-2);
+        que.enqueue(4);
+        que.dequeue();
     }
 }
