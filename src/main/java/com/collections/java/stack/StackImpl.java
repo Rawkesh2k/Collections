@@ -86,6 +86,8 @@ public class StackImpl {
         s.push(35);
         s.push(5224);
         s.push(0);
+        s.add(34);
+
         //s.push(null); // null values are not allowed-> throws NullPointerException
 
 
