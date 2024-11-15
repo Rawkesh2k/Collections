@@ -1,5 +1,7 @@
 package com.collections.java;
 
+import java.util.random.RandomGenerator;
+
 public class Java17Features {
 
     //Sealed Classes
@@ -60,5 +62,10 @@ public class Java17Features {
             default -> "Invalid Day";
         };
         System.out.println(weekDay);
+
+        //Random Number Generators
+
+        RandomGenerator rg = RandomGenerator.getDefault();
+        System.out.println(rg.nextInt());
     }
 }
