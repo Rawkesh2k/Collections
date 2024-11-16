@@ -35,8 +35,9 @@ public class PriorityQueueImpl {
 
         System.out.println(pr.poll()); //->throws ClassCastException,
         // so we have implement own compare() inorder to overcome this exception
-
         System.out.println(pr);
+
+
     }
 }
 
