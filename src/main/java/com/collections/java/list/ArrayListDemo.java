@@ -136,7 +136,9 @@ public class ArrayListDemo {
         ArrayList<Integer> numsList = new ArrayList<>(Arrays.asList(2, 3, 4, 5, 6, 7, 3, 5, 2, 5, 2, 5, 3, 567, 46, 46, 46, 434, 234, 23));
 
         System.out.println("The sublist is: " + numsList.subList(4, 7));
-
+        System.out.println("Before reversing the numlist : " + numsList);
+        numsList.sort(Comparator.reverseOrder());
+        System.out.println("The reversed list after implementing comparator is : " + numsList);
         //toArray() - returns an Object[]
         Object[] array1 = numsList.toArray();
         System.out.println(Arrays.toString(array1));
