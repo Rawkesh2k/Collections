@@ -102,5 +102,27 @@ public class Java8Features {
             default -> "Default number";
         };
         System.out.println(m);
+
+        //JDK -13: multi-line string
+
+        var response = """
+                {
+                "name":"Tom",
+                "age":"20",
+                "place":"USA"
+                }""";
+        System.out.println(response);
+
+
+        //The record keyword in Java is a special feature introduced in Java 14
+        // (as a preview feature) and made stable in Java 16. It is used to create
+        // immutable data classes with minimal boilerplate code. A record is a
+        // special kind of class that is designed to hold immutable data, and it
+        // automatically provides implementations for common methods like equals(),
+        // hashCode(), and toString()
+        NewFeatures deets = new NewFeatures("Max", 27, "Holland");
+        System.out.println(deets.name());
     }
+
+
 }
