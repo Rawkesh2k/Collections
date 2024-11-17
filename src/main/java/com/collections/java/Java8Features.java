@@ -1,11 +1,13 @@
 package com.collections.java;
 
+import java.io.Serializable;
 import java.time.Clock;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Java8Features {
 
@@ -62,7 +64,43 @@ public class Java8Features {
 
         //This greatly improves performance for certain types of operations,
         // such as large-scale data processing tasks, with minimal changes to the codebase
-        List<Integer> nums = Arrays.asList(1, 8, 2, 3, 4, 0, 985,1, 8, 2, 3, 4, 0, 985,1, 8, 2, 3, 4, 0, 985,1, 8, 2, 3, 4, 0, 985);
+        List<Integer> nums = Arrays.asList(1, 8, 2, 3, 4, 0, 985, 1, 8, 2, 3, 4, 0, 985, 1, 8, 2, 3, 4, 0, 985, 1, 8, 2, 3, 4, 0, 985);
         nums.parallelStream().forEach(System.out::println); //order will not be preserved
+
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8).filter(n -> n % 2 == 0).forEach(e -> System.out.println(e));
+
+        //appending strings suing stream
+
+        Stream.of("Every", "Word").map(e -> e + " Now and Then").forEach(System.out::println);
+
+        //JDK 9 - JShell - JShell (Java Shell) is an interactive tool introduced in Java 9 that lets you quickly test and
+        // execute small pieces of Java code without creating a full program.
+        //Why Use JShell?
+        //For Learning: Practice Java syntax and concepts interactively.
+        //For Testing: Try out code or Java APIs without creating files.
+        //For Debugging: Test small pieces of code to isolate issues.
+
+        //Factory Methods for Immutable Collections - JDK 9
+
+        List<Object> a = List.of("A", "BGAE", "FEF", "FIFA", 'f', 354, 53, 78f, 67.8902);
+
+        a.stream().forEach(System.out::println);
+        /*for (Object o:a)
+        {
+            System.out.println(o);
+        }*/
+
+        //JDK - 10 - 'var' keyword is used to omit the type of the variable
+        var num = 45 + "RA";
+        System.out.println(num);
+
+        //JDK 12 - new switch case
+        var n = 3;
+        var m = switch (n) {
+            case 1 -> "One";
+            case 2 -> "Two";
+            default -> "Default number";
+        };
+        System.out.println(m);
     }
 }
