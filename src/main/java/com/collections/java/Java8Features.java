@@ -122,6 +122,14 @@ public class Java8Features {
         // hashCode(), and toString()
         NewFeatures deets = new NewFeatures("Max", 27, "Holland");
         System.out.println(deets.name());
+
+        //JDK 14 : instanceOf
+
+        Object ob = new String("Revere");
+        if(ob instanceof String)
+        {
+            System.out.println(((String) ob).length());
+        }
     }
 
 
