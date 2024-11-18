@@ -1,5 +1,7 @@
 package com.collections.java;
 
+import java.util.Random;
+import java.util.UUID;
 import java.util.random.RandomGenerator;
 
 public class Java17Features {
@@ -67,5 +69,19 @@ public class Java17Features {
 
         RandomGenerator rg = RandomGenerator.getDefault();
         System.out.println(rg.nextInt());
+        String rando = getRadomString(15);
+        System.out.println("The random string is : " + rando);
+    }
+
+    public static String getRadomString(int length) {
+        //Generating a Random String
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(chars.length());
+            sb.append(chars.charAt(index));
+        }
+        return sb.toString();
     }
 }
